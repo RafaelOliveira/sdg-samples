@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="5" tilewidth="128" tileheight="128" nextobjectid="30">
+ <tileset firstgid="1" name="tileset" tilewidth="128" tileheight="128" tilecount="16" columns="4">
+  <image source="images/tileset.png" width="513" height="513"/>
+ </tileset>
+ <tileset firstgid="17" name="objects" tilewidth="282" tileheight="301" tilecount="13" columns="0">
+  <tile id="0">
+   <image width="133" height="65" source="images/Bush-1.png"/>
+  </tile>
+  <tile id="1">
+   <image width="133" height="65" source="images/Bush-2.png"/>
+  </tile>
+  <tile id="2">
+   <image width="73" height="47" source="images/Bush-3.png"/>
+  </tile>
+  <tile id="3">
+   <image width="73" height="46" source="images/Bush-4.png"/>
+  </tile>
+  <tile id="4">
+   <image width="77" height="77" source="images/Crate.png"/>
+  </tile>
+  <tile id="5">
+   <image width="49" height="41" source="images/Mushroom-1.png"/>
+  </tile>
+  <tile id="6">
+   <image width="50" height="41" source="images/Mushroom-2.png"/>
+  </tile>
+  <tile id="7">
+   <image width="63" height="65" source="images/Sign-1.png"/>
+  </tile>
+  <tile id="8">
+   <image width="62" height="64" source="images/Sign-2.png"/>
+  </tile>
+  <tile id="9">
+   <image width="90" height="54" source="images/Stone.png"/>
+  </tile>
+  <tile id="10">
+   <image width="116" height="44" source="images/Tree-1.png"/>
+  </tile>
+  <tile id="11">
+   <image width="282" height="301" source="images/Tree-2.png"/>
+  </tile>
+  <tile id="12">
+   <image width="282" height="275" source="images/Tree-3.png"/>
+  </tile>
+ </tileset>
+ <layer name="collision" width="15" height="5">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,2,3,0,0,0,0,0,1,3,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,5,7,0,0,0,0,0,0,
+6,6,7,0,0,5,8,16,12,4,6,6,6,6,6
+</data>
+ </layer>
+ <objectgroup name="objects_bg">
+  <object id="1" gid="28" x="864" y="384" width="282" height="301"/>
+  <object id="2" gid="29" x="32" y="512" width="282" height="275"/>
+  <object id="3" gid="27" x="704" y="512" width="116" height="44"/>
+  <object id="5" gid="23" x="1248" y="512" width="50" height="41"/>
+  <object id="6" gid="24" x="256" y="512" width="63" height="65"/>
+  <object id="7" gid="25" x="1312" y="512" width="62" height="64"/>
+  <object id="8" gid="26" x="1339" y="128" width="90" height="54"/>
+  <object id="9" gid="22" x="64" y="512" width="49" height="41"/>
+  <object id="10" gid="22" x="512" y="128" width="49" height="41"/>
+ </objectgroup>
+ <objectgroup name="objects_collision">
+  <object id="19" gid="21" x="1568" y="512" width="77" height="77"/>
+  <object id="20" gid="21" x="1645" y="512" width="77" height="77"/>
+  <object id="21" gid="21" x="1824" y="512" width="77" height="77"/>
+  <object id="22" gid="21" x="288" y="128" width="77" height="77"/>
+  <object id="23" gid="21" x="365" y="128" width="77" height="77"/>
+ </objectgroup>
+ <objectgroup name="objects_fg">
+  <object id="25" gid="17" x="1472" y="512" width="133" height="65"/>
+  <object id="27" gid="20" x="1408" y="128" width="73" height="46"/>
+  <object id="28" gid="19" x="182" y="512" width="73" height="47"/>
+  <object id="29" gid="20" x="1771" y="512" width="73" height="46"/>
+ </objectgroup>
+</map>

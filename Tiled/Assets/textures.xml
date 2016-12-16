@@ -1,0 +1,17 @@
+<TextureAtlas imagePath="textures.png">
+	<SubTexture name="Bush-1.png" x="284" y="582" width="133" height="65"/>
+	<SubTexture name="Bush-2.png" x="284" y="515" width="133" height="65"/>
+	<SubTexture name="Bush-3.png" x="419" y="515" width="73" height="47"/>
+	<SubTexture name="Bush-4.png" x="419" y="564" width="73" height="46"/>
+	<SubTexture name="Crate.png" x="414" y="705" width="77" height="77"/>
+	<SubTexture name="Mushroom-1.png" x="506" y="624" width="49" height="41"/>
+	<SubTexture name="Mushroom-2.png" x="494" y="581" width="50" height="41"/>
+	<SubTexture name="Sign-1.png" x="493" y="705" width="63" height="65"/>
+	<SubTexture name="Sign-2.png" x="494" y="515" width="62" height="64"/>
+	<SubTexture name="Stone.png" x="414" y="649" width="90" height="54"/>
+	<SubTexture name="Tree-1.png" x="284" y="750" width="116" height="44"/>
+	<SubTexture name="Tree-2.png" x="515" y="0" width="282" height="301"/>
+	<SubTexture name="Tree-3.png" x="0" y="515" width="282" height="275"/>
+	<SubTexture name="Water.png" x="284" y="649" width="128" height="99"/>
+	<SubTexture name="tileset.png" x="0" y="0" width="513" height="513"/>
+</TextureAtlas>

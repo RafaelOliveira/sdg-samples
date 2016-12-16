@@ -1,0 +1,6 @@
+[submodule "Tiled/Libraries/Sdg"]
+	path = Tiled/Libraries/Sdg
+	url = https://github.com/RafaelOliveira/Sdg
+[submodule "Tiled/Libraries/format-tiled"]
+	path = Tiled/Libraries/format-tiled
+	url = https://github.com/Yanrishatum/haxe-format-tiled
