@@ -4,3 +4,12 @@
 [submodule "Tiled/Libraries/format-tiled"]
 	path = Tiled/Libraries/format-tiled
 	url = https://github.com/Yanrishatum/haxe-format-tiled
+[submodule "Differ/Libraries/Sdg"]
+	path = Differ/Libraries/Sdg
+	url = https://github.com/RafaelOliveira/Sdg
+[submodule "Differ/Libraries/differ"]
+	path = Differ/Libraries/differ
+	url = https://github.com/snowkit/differ
+[submodule "Differ/Libraries/format-tiled"]
+	path = Differ/Libraries/format-tiled
+	url = https://github.com/Yanrishatum/haxe-format-tiled

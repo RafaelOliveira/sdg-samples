@@ -77,7 +77,7 @@ class Player extends Object
 			sprite.flip.x = false;
 		}
 
-		if (Keyboard.isPressed('z') && onGround)
+		if ((Keyboard.isPressed('z') || Keyboard.isPressed('up')) && onGround)
 		{
 			motion.velocity.y = -9;
 			onGround = false;
