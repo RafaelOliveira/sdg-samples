@@ -1,4 +1,4 @@
-This example shows how to load tiled maps using the library format-tiled.
+This example shows how to load tiled maps using the library [format-tiled](https://github.com/Yanrishatum/haxe-format-tiled).
 
 Assets used:
 ```
