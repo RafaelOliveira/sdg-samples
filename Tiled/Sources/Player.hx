@@ -20,15 +20,18 @@ class Player extends Object
 	var onGround:Bool;
 	
 	var body:Hitbox;
-	var halfWidth:Int;	
+	var halfWidth:Int;
+
+	var py:Float;	
 
 	public function new(x:Float, y:Float):Void
 	{
 		super(x, y);
 
 		layer = 3;
+		py = y;
 
-		var regions = Atlas.createRegionsFromAsset(Assets.images.player, 92, 136);
+		var regions = Atlas.createRegionList(Assets.images.player, 92, 136);
 		
 		sprite = new Sprite(regions[0]);
 		graphic = sprite;
@@ -36,7 +39,7 @@ class Player extends Object
 		setSizeAuto();
 		halfWidth = Std.int(width / 2);
 
-		body = new Hitbox(this, 'play');
+		body = new Hitbox(this);
 		
 		setupAnimations(regions);
 		
@@ -95,6 +98,12 @@ class Player extends Object
 		
 		body.moveBy(motion.velocity.x, motion.velocity.y, 'collision');
 
+		if (y >= (py + 1))
+		{
+			onGround = false;
+			py = y;
+		}
+
 		screen.camera.follow(x + halfWidth, 0);
 
 		if (x < 0)
@@ -111,8 +120,10 @@ class Player extends Object
 		if (motion.velocity.y > 0)
 		{
 			onGround = true;
-			motion.velocity.y = 0;
+			py = y;
 		}
+
+		motion.velocity.y = 0;
 
 		return true;
 	}	

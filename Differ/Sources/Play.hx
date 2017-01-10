@@ -1,11 +1,14 @@
 package;
 
 import kha.Assets;
+import kha.graphics2.Graphics;
+import kha.Color;
 import sdg.Object;
 import sdg.Screen;
 import sdg.graphics.tiles.Tileset;
 import sdg.graphics.tiles.Tilemap;
 import sdg.graphics.TileSprite;
+import sdg.manager.Keyboard;
 import format.tmx.Reader;
 import format.tmx.Data.TmxTileLayer;
 import format.tmx.Data.TmxObject;
@@ -19,6 +22,8 @@ import differ.math.Vector;
 class Play extends Screen
 {
 	public var shapeList:Array<Shape>;
+	var shapeDrawer:KhaShapeDrawer;
+	var showDebug:Bool;
 
 	public static var instance:Play;
 
@@ -36,6 +41,9 @@ class Play extends Screen
 		loadMap();		
 
 		bg.graphic = new TileSprite(Assets.images.bg, worldWidth, worldHeight);
+
+		shapeDrawer = new KhaShapeDrawer();
+		showDebug = false;
 	}
 
 	inline function loadMap()
@@ -111,5 +119,26 @@ class Play extends Screen
 				default: continue;
 			}
 		}		
+	}
+
+	override public function update():Void
+	{
+		super.update();
+
+		if (Keyboard.isPressed('d'))
+			showDebug = !showDebug;
+	}
+
+	override public function render(g:Graphics):Void
+	{
+		super.render(g);
+
+		if (showDebug)
+		{
+			g.color = Color.Red;
+		
+			for (shape in shapeList)
+				shapeDrawer.drawShape(shape);
+		}
 	}
 }

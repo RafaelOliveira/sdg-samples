@@ -20,6 +20,8 @@ class Project
 		var engine = new Engine(800, 600);
 		engine.addManager(new Keyboard());
 
+		KhaShapeDrawer.g = engine.backbuffer.g2;
+
 		Sdg.addScreen('play', new Play(), true);
 
 		System.notifyOnRender(engine.render);

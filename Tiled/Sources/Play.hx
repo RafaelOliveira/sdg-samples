@@ -9,7 +9,7 @@ import sdg.graphics.tiles.Tileset;
 import sdg.graphics.tiles.Tilemap;
 import sdg.graphics.TileSprite;
 import sdg.collision.Hitbox;
-import sdg.collision.GridEx;
+import sdg.collision.Grid;
 import sdg.math.Rectangle;
 import sdg.atlas.Atlas;
 import sdg.atlas.Region;
@@ -134,18 +134,24 @@ class Play extends Screen
 			}
 		}
 
-		var grid = new GridEx(objectMap, 'play', bgMap, null, 'collision');
-		
-		// sets all the tiles as solid tiles
-		grid.setTileCollisionRect(0, 0, 4, 4, true);
+		var grid = new Grid(objectMap, 128, 128, 'collision');
+				 
+		grid.setArea(0, 4, 3, 1, true);
+		grid.setArea(5, 4, 10, 1, true);
+		grid.setArea(7, 3, 2, 1, true);
 
 		// this is a rect for the floating platforms
 		// because the height is smaller		
 		var rectTile = new Rectangle(0, 0, 128, 66);
- 
-		grid.setTileRect(0, rectTile);
-		grid.setTileRect(1, rectTile);
-		grid.setTileRect(2, rectTile);
+		
+		// first platform
+		grid.setColRect(2, 1, rectTile);
+		grid.setColRect(3, 1, rectTile);
+		grid.setColRect(4, 1, rectTile);
+
+		// second platform
+		grid.setColRect(10, 1, rectTile);
+		grid.setColRect(11, 1, rectTile);
 	}
 
 	function createObjects(objects:Array<TmxObject>, regions:Map<Int, Region>, collision:Bool, layer:Int)
@@ -161,7 +167,7 @@ class Play extends Screen
 					obj.layer = layer;
 					
 					if (collision)
-						new Hitbox(obj, 'play', null, 'collision');
+						new Hitbox(obj, null, 'collision');
 
 				default: continue;
 			}
